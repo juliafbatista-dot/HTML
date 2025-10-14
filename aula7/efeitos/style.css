@@ -1,0 +1,47 @@
+button{
+    background-color: rgb(41, 178, 105);
+    color:white;
+    transition:background 0.5s ease;
+     border-radius: 10px;
+     border:none;
+     transform:scale(1.2);
+}
+button:hover{
+    background: darkblue;
+}
+
+@keyframes piscar{
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+
+}
+div{
+    font-family: cursive;
+    border-radius: 10px;
+    justify-content: center;
+    width: 50%;
+   
+}
+div:hover{
+    transform:translate(50px, 20px)
+}
+img{
+    height: 350px;
+    opacity:0.4;
+   
+}
+img:hover{
+    transform:rotate(80deg);
+    transition:transform 0.5s;
+}
+ section{
+    justify-content: start;
+    justify-content: center;
+}
+.div2{
+    background: linear-gradient(to right, red, yellow);
+}
+.div3{
+    background: radial-gradient(circle, blue, white);
+}
