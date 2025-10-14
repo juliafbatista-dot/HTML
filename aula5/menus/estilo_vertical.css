@@ -1,0 +1,17 @@
+ul{
+    list-style: none;
+    padding: 0;
+    width: 200px;
+    background-color: #a3f5f0;
+}
+a{
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+}
+
+ a:hover{
+            color: rgb(176, 8, 242);
+            text-decoration: underline
+        }

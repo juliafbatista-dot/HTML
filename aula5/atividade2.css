@@ -1,0 +1,97 @@
+
+body, h1, h2, p, ul, li, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6; 
+    background-color: pink;
+    color: #a933d0;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #9c48b8;
+    color: azure;
+    padding: 20px;
+    text-align: center;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu {
+    list-style: none;
+    margin-top: 0px; 
+}
+
+.menu li {
+    display: inline-block;
+    margin: 0 0px;
+}
+
+.menu a {
+    color: aliceblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: rgb(153, 0, 255);
+}
+
+
+section img {
+    display: block;
+    margin: 10px auto;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+}
+
+
+section {
+    margin: 0px 0;
+}
+
+ul {
+    margin-left: 0px;
+    list-style-type: square;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgb(248, 166, 203);
+}
+
+table, th, td {
+    border: 1px solid #f461ad; 
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background:rgb(248, 166, 203);
+    color: #9c48b8;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 1cap;
+    background: #8d31ac;
+    color: white
+}
+
+p{
+    text-align: center;
+}

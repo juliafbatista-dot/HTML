@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Garante que caracteres especiais como acentos sejam exibidos corretamente -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz a página se adaptar ao tamanho da tela (responsiva) -->
+  <title>Royal Pizzaria - Pizzaria Premium</title> <!-- Título que aparece na aba do navegador -->
+  <meta name="description" content="Royal Pizza — pizzaria premium com ingredientes selecionados, delivery rápido e eventos exclusivos."> <!-- Descrição usada em mecanismos de busca (SEO) -->
+
+  <style>
+    /* ====== Estilo geral da página ====== */
+    body {
+      font-family: Arial, sans-serif; /* Define a fonte usada no texto */
+      margin: 0; /* Remove margens padrão do navegador */
+      background: #f8f5ef; /* Cor de fundo clara para dar contraste com os cards */
+      color: #111; /* Cor padrão do texto */
+    }
+
+    /* ====== Cabeçalho ====== */
+    header {
+      background: #fff; /* Fundo branco */
+      border-bottom: 1px solid #ccc; /* Linha fina na parte de baixo do cabeçalho */
+      padding: 15px; /* Espaçamento interno */
+      text-align: center; /* Centraliza o conteúdo */
+    }
+
+    /* ====== Links do menu de navegação ====== */
+    nav a {
+      margin: 0 10px; /* Espaçamento entre os links */
+      text-decoration: none; /* Remove o sublinhado padrão */
+      color: #111; /* Cor preta */
+    }
+
+    /* ====== Títulos das seções ====== */
+    h2 {
+      text-align: center; /* Centraliza o título */
+      color: #0b3d2e; /* Verde escuro */
+      margin-top: 30px; /* Espaçamento acima do título */
+    }
+
+    /* ====== Área de cardápio (layout flex) ====== */
+    .cardapio {
+      display: flex; /* Ativa o layout flexbox */
+      flex-wrap: wrap; /* Permite que os itens quebrem linha se faltar espaço */
+      gap: 20px; /* Espaçamento entre os cards */
+      justify-content: center; /* Centraliza os cards no eixo horizontal */
+      margin: 30px auto; /* Espaçamento superior/inferior e centralização */
+      max-width: 1200px; /* Largura máxima do container */
+    }
+
+    /* ====== Estilo dos cards individuais ====== */
+    .card {
+      background: #fff; /* Fundo branco */
+      border: 1px solid #ccc; /* Borda fina cinza */
+      border-radius: 12px; /* Bordas arredondadas */
+      width: 250px; /* Largura fixa */
+      padding: 15px; /* Espaçamento interno */
+      text-align: center; /* Conteúdo centralizado */
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* Sombra leve para destacar o card */
+    }
+
+    /* ====== Imagens dentro dos cards ====== */
+    .card img {
+      width: 100%; /* Faz a imagem ocupar toda a largura do card */
+      height: 230px; /* Altura fixa para padronizar todas as imagens */
+      object-fit: cover; /* Corta a imagem proporcionalmente para preencher o espaço */
+      border-radius: 10px; /* Bordas arredondadas nas imagens */
+    }
+
+    /* ====== Nome da pizza/bebida ====== */
+    .card h3 {
+      margin: 10px 0 5px; /* Espaçamento acima e abaixo do título */
+      color: #0b3d2e; /* Verde escuro */
+    }
+
+    /* ====== Preço das pizzas/bebidas ====== */
+    .card p {
+      margin: 5px 0; /* Espaçamento acima e abaixo */
+      font-weight: bold; /* Deixa o texto em negrito */
+      color: #d4af37; /* Dourado para destacar o preço */
+    }
+
+    /* ====== Rodapé ====== */
+    footer {
+      background: #fff; /* Fundo branco */
+      border-top: 1px solid #ccc; /* Linha separando o rodapé */
+      text-align: center; /* Centraliza os textos */
+      padding: 10px; /* Espaçamento interno */
+      margin-top: 20px; /* Espaçamento do conteúdo acima */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== Cabeçalho com logo e menu ====== -->
+  <header>
+    <!-- Logo da pizzaria -->
+    <img src="pizzaria.png" alt="Logo Royal Pizza" width="90" style="vertical-align:middle;">
+   
+    <!-- Nome da pizzaria, com parte em verde e parte em dourado -->
+    <h1 style="display:inline; margin-left:10px; color:#0b3d2e;">
+      Royal <span style="color:#d4af37;">Pizza</span>
+    </h1>
+
+    <!-- Menu de navegação com links para seções da página -->
+    <nav>
+      <a href="#pizzas">Pizzas</a>
+      <a href="#bebidas">Bebidas</a>
+      <a href="#contato">Contato</a>
+      <a href="pagamentopizzaria.html">Forma de Pagamento</a>
+    </nav>
+  </header>
+
+  <!-- ====== Seção das Pizzas ====== -->
+  <h2 id="pizzas">🍕 Nossas Pizzas</h2>
+  <section class="cardapio">
+    <!-- Cada div.card representa uma pizza -->
+    <div class="card">
+      <img src="https://blog.dellys.com.br/wp-content/uploads/2024/08/2-12.png" alt="Pizza Mussarela">
+      <h3>Mussarela</h3>
+      <p>R$ 75,00</p>
+    </div>
+    <div class="card">
+      <img src="https://painacozinha.com/wp-content/uploads/85.Pizza-de-Calabresa-com-Catupiry.webp" alt="Pizza Calabresa">
+      <h3>Calabresa</h3>
+      <p>R$ 75,00</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT65Xm-2r35UMTN7LoMGZJuFAVvru0s8zd7xQ&s" alt="Pizza Portuguesa">
+      <h3>Portuguesa</h3>
+      <p>R$ 82,00</p>
+    </div>
+    <div class="card">
+      <img src="https://alloydeliveryimages.s3.sa-east-1.amazonaws.com/item_images/11602/669add6391308hlnd4.webp" alt="Pizza Frango com Catupiry">
+      <h3>Frango c/ Catupiry</h3>
+      <p>R$ 82,00</p>
+    </div>
+    <div class="card">
+      <img src="https://s2-receitas.glbimg.com/IioKJjsRT8nIuv2q8nzcypphLPk=/0x0:1200x675/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2024/V/2/rafz5yTJuSiHGDoolkpg/pizza-de-4-queijos.jpg" alt="Pizza Quatro Queijos">
+      <h3>Quatro Queijos</h3>
+      <p>R$ 85,00</p>
+    </div>
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF--IHkMkaBPiD3ZsV-rxLFVH4B8_de8LXLQK9QlmG4b-0Tyu0t2oiZOscUbi28eSSTds&usqp=CAU" alt="Pizza Chocolate">
+      <h3>Chocolate</h3>
+      <p>R$ 70,00</p>
+    </div>
+    <div class="card">
+      <img src="https://beatoven.com.br/wp-content/uploads/2025/02/pizza-chocolate-morango-fermentacao-lenta.png" alt="Pizza Nutella com Morango">
+      <h3>Nutella c/ Morango</h3>
+      <p>R$ 78,00</p>
+    </div>
+  </section>
+
+  <!-- ====== Seção das Bebidas ====== -->
+  <h2 id="bebidas">🥤 Bebidas</h2>
+  <section class="cardapio">
+    <!-- Cada div.card representa uma bebida -->
+    <div class="card">
+      <img src="https://zonasul.vtexassets.com/arquivos/ids/4042344-800-450?v=638804554888730000&width=800&height=450&aspect=true" alt="Bebidas Diversas">
+      <h3>Fanta</h3>
+      <p>A partir de R$ 6,00</p>
+    </div>
+   
+    <div class="card">
+      <img src="https://superprix.vteximg.com.br/arquivos/ids/210608-600-600/BMo6Zlso.png?v=638083543189830000" alt="Bebidas Diversas" >
+      <h3>Coca-cola</h3>
+      <p>A partir de R$ 9,00</p>
+    </div>    
+
+    <div class="card">
+      <img src="https://bretas.vtexassets.com/arquivos/ids/201495-800-auto?v=638376352002400000&width=800&height=auto&aspect=true" alt="Bebidas Diversas">
+      <h3>Guarana</h3>
+      <p>A partir de R$ 7,00</p>
+    </div>
+
+    <div class="card">
+      <img src="https://www.lepingue.com.br/admin/uploads/images/galeria/agua-com-e-sem-gas_19b3d1073e4ebc83e6392331f4d11565__800x600__0x0.jpg" alt="Bebidas Diversas">
+      <h3>Agua com ou sem gás</h3>
+      <p>A partir de R$ 4,00</p>
+    </div>
+</section>
+
+  <!-- ====== Rodapé ====== -->
+  <footer>
+    <h4 id="contato">Nossos contatos:</h4>
+    <!-- Contatos simples em formato de texto -->
+    <p>e-mail: pizzariaroyal@gmail.com</p>                
+    <p>Telefone: xxxxx-xxxx</p>                
+    <p>Instagram: pizzaria_royal</p>
+    <!-- Aviso de direitos autorais -->
+    <small>&copy; 2025 Royal Pizza — Todos os direitos reservados</small>
+  </footer>
+
+</body>
+</html>
+
