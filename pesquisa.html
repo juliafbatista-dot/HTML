@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesquisa Aplicada — SGBD</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#6ee7b7;
+      --muted:#9ca3af;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071028 0%, #071527 60%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      padding:28px;
+      line-height:1.5;
+    }
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:24px;
+    }
+    header{
+      grid-column:1/-1;
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:68px;height:68px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#072024;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(6,8,15,0.6)
+    }
+    h1{font-size:20px;margin:0}
+    p.lead{margin:0;color:var(--muted)}
+
+    nav.sidebar{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      height:fit-content;
+      position:sticky;top:28px;
+      box-shadow:0 8px 30px rgba(3,6,12,0.6);
+    }
+    nav.sidebar ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    nav.sidebar a{color:var(--accent);text-decoration:none;padding:8px 10px;border-radius:8px;display:block}
+    nav.sidebar a:hover{background:var(--glass)}
+
+    main.card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow:0 8px 30px rgba(2,6,12,0.5);
+    }
+    section{margin-bottom:20px}
+    h2{margin:0 0 10px 0;font-size:18px;color:#cfeef2}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:12px}
+    .box{background:rgba(255,255,255,0.01);padding:14px;border-radius:10px}
+
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left}
+    th{font-weight:600;background:rgba(255,255,255,0.01)}
+
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--accent);font-weight:600;font-size:13px}
+
+    footer{grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;margin-top:6px}
+
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr;}
+      nav.sidebar{position:static}
+      .compare{grid-template-columns:1fr}
+    }
+
+    /* Print friendly */
+    @media print{
+      body{background:white;color:black;padding:12px}
+      nav.sidebar{display:none}
+      .logo{display:none}
+      .card{box-shadow:none;background:white}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SGBD</div>
+      <div>
+        <h1>Pesquisa Aplicada — Sistemas de Gestão de Bases de Dados (SGBD)</h1>
+        <p class="lead">Resumo direto: o que é, funções, exemplos, tipos (relacional e não relacional), comparação e segurança dos dados.</p>
+      </div>
+    </header>
+
+    <nav class="sidebar" aria-label="Navegação">
+      <ul>
+        <li><a href="#o-que-e">O que é e para que serve</a></li>
+        <li><a href="#funcoes">Funções principais</a></li>
+        <li><a href="#exemplos">Exemplos práticos</a></li>
+        <li><a href="#tipos">Tipos</a></li>
+        <li><a href="#comparacao">Comparação</a></li>
+        <li><a href="#caracteristicas">Características / Importância</a></li>
+        <li><a href="#seguranca">Controle & Segurança</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+      </ul>
+    </nav>
+
+    <main class="card" role="main">
+      <section id="o-que-e">
+        <h2>O que é um SGBD e para que serve</h2>
+        <p class="meta">Definição curta</p>
+        <div class="box">
+          <p>Um SGBD (Sistema de Gestão de Bases de Dados) é um software que permite criar, armazenar, consultar, atualizar e administrar bases de dados. Serve para organizar informação de forma eficiente, controlar acesso, garantir integridade e facilitar a recuperação de dados por aplicações e usuários.</p>
+        </div>
+      </section>
+
+      <section id="funcoes">
+        <h2>Funções principais de um SGBD</h2>
+        <p class="meta">O que um SGBD faz no dia a dia</p>
+        <div class="box">
+          <ul>
+            <li><strong>Definição e manipulação de dados:</strong> permite criar esquemas (tabelas, coleções) e realizar operações CRUD (Create, Read, Update, Delete).</li>
+            <li><strong>Controle de acesso:</strong> gerenciamento de usuários, papéis e permissões.</li>
+            <li><strong>Controle de transações:</strong> garante propriedades ACID (Atomicidade, Consistência, Isolamento, Durabilidade) em bancos relacionais.</li>
+            <li><strong>Integridade dos dados:</strong> chaves primárias/estrangeiras, restrições, validações.</li>
+            <li><strong>Recuperação e backup:</strong> ferramentas para restauração após falhas e rotinas de backup/restore.</li>
+            <li><strong>Gerenciamento de concorrência:</strong> coordenar múltiplos acessos simultâneos sem corromper os dados.</li>
+            <li><strong>Otimização de consultas:</strong> índices, planos de execução e caches para melhorar performance.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="exemplos">
+        <h2>Exemplos práticos</h2>
+        <p class="meta">Cenários reais onde SGBD é usado</p>
+        <div class="box">
+          <ul>
+            <li><strong>Comércio eletrônico:</strong> armazenar catálogos, pedidos, clientes e inventário (ex.: banco relacional para transações, noSQL para sessões e caches).</li>
+            <li><strong>Aplicativos bancários:</strong> usar SGBDs relacionais com fortes garantias ACID para transações financeiras.</li>
+            <li><strong>Redes sociais:</strong> usar bancos NoSQL e distribuídos para posts, seguidores e feeds com alto volume e baixa latência.</li>
+            <li><strong>Sistemas de logística:</strong> combinar bases relacionais e sistemas de dados em tempo real para rastreamento de entregas.</li>
+            <li><strong>Análises e BI:</strong> Data warehouses (SGBD ou engines analíticas) para processamento de grandes volumes e relatórios.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="tipos">
+        <h2>Tipos de SGBD: Relacional vs Não Relacional</h2>
+        <p class="meta">Visão geral</p>
+        <div class="box">
+          <div class="compare">
+            <div>
+              <h3 class="badge">Relacional</h3>
+              <p><strong>Modelo:</strong> tabelas (linhas e colunas), esquemas fixos.</p>
+              <p><strong>Linguagem:</strong> SQL (Structured Query Language).</p>
+              <p><strong>Forças:</strong> integridade, transações ACID, consultas complexas com joins.</p>
+              <p><strong>Exemplos:</strong> MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server.</p>
+            </div>
+            <div>
+              <h3 class="badge">Não Relacional (NoSQL)</h3>
+              <p><strong>Modelo:</strong> documentos, chave-valor, colunas largas, grafos — normalmente esquema flexível.</p>
+              <p><strong>Linguagens/Interfaces:</strong> consultas específicas por tipo: MongoDB (documento), Redis (chave-valor), Cassandra (coluna larga), Neo4j (grafo).</p>
+              <p><strong>Forças:</strong> escalabilidade horizontal, flexibilidade de esquema, altas taxas de escrita/leitura distribuídas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="comparacao">
+        <h2>Comparação entre Relacional e Não Relacional</h2>
+        <p class="meta">Quando escolher cada um?</p>
+        <div class="box">
+          <table>
+            <thead>
+              <tr><th>Critério</th><th>Relacional</th><th>Não Relacional</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Estrutura</td><td>Esquema rígido (DDL).</td><td>Esquema flexível ou sem esquema.</td></tr>
+              <tr><td>Transações</td><td>Suporte ACID forte.</td><td>Variável — muitas implementações focam em disponibilidade/particionamento (BASE).</td></tr>
+              <tr><td>Escalabilidade</td><td>Vertical (scale-up) tradicionalmente.</td><td>Horizontal (scale-out) mais fácil.</td></tr>
+              <tr><td>Consultas complexas</td><td>Ótimo para joins e análises relacionais.</td><td>Menos eficiente para joins complexos (exceto grafos).</td></tr>
+              <tr><td>Casos de uso típicos</td><td>ERP, bancos, sistemas transacionais.</td><td>Aplicações web em grande escala, caches, logs, big data.</td></tr>
+              <tr><td>Consistência</td><td>Forte.</td><td>Eventual (em muitos sistemas distribuídos) ou configurável.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="caracteristicas">
+        <h2>Características e importância no desenvolvimento de sistemas</h2>
+        <p class="meta">Como SGBDs afetam arquitetura e qualidade de software</p>
+        <div class="box">
+          <ul>
+            <li><strong>Modelagem de dados:</strong> o SGBD influencia como você modela entidades e relações — um bom modelo facilita manutenção e desempenho.</li>
+            <li><strong>Desempenho:</strong> escolha de índices, normalização e particionamento impactam latência e throughput.</li>
+            <li><strong>Escalabilidade:</strong> determina se a aplicação precisa ser redesenhada para crescer.</li>
+            <li><strong>Manutenibilidade:</strong> esquemas claros e boas práticas (migrations, testes) facilitam evolução do sistema.</li>
+            <li><strong>Integração:</strong> SGBDs frequentemente expõem APIs/ODBC/JDBC que permitem integração com outras aplicações e ETL.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="seguranca">
+        <h2>Controle de acesso, integridade, consistência e segurança dos dados</h2>
+        <p class="meta">Práticas e mecanismos essenciais</p>
+        <div class="box">
+          <h4>Controle de acesso</h4>
+          <p>Uso de autenticação (usuários, certificados), autorização (princípio do menor privilégio), roles, gestão de senhas, e logging/auditoria para rastrear ações.</p>
+
+          <h4>Integridade</h4>
+          <p>Restrições (primary key, foreign key, unique, check), triggers e validações no nível do banco para evitar dados inválidos.</p>
+
+          <h4>Consistência</h4>
+          <p>Em SGBDs relacionais, propriedades ACID asseguram consistência; em sistemas distribuídos, é preciso planejar trade-offs entre consistência e disponibilidade (modelo CAP/BASE).</p>
+
+          <h4>Segurança dos dados</h4>
+          <ul>
+            <li><strong>Criptografia:</strong> dados em trânsito (TLS) e dados em repouso (TDE ou criptografia de coluna).</li>
+            <li><strong>Backups e recuperação:</strong> planos regulares de backup, testes de restauração e retention policy.</li>
+            <li><strong>Monitoramento e alertas:</strong> detectar acessos suspeitos ou degradação de performance.</li>
+            <li><strong>Segurança física e de infraestrutura:</strong> políticas de acesso a servidores, redes privadas e segregação de ambientes (dev/test/prod).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="conclusao">
+        <h2>Conclusão e recomendações rápidas</h2>
+        <div class="box">
+          <p>Não existe "melhor" absoluto — a escolha entre relacional e não relacional depende dos requisitos: consistência / transações críticas → relacional; escalabilidade massiva / esquemas variáveis → NoSQL. Em sistemas reais, é comum usar ambos em arquitetura híbrida (poliglota).</p>
+          <p><strong>Dica prática:</strong> comece modelando os dados e os requisitos de consistência/escalabilidade. Prove com um protótipo e monitore antes de escalar em produção.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      Pesquisa gerada pot Júlia Ferreira Batista n°20 2°A
+    </footer>
+  </div>
+</body>
+</html>
